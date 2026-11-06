@@ -15,7 +15,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@LabbzIO">
-<script>window.LABBZ_FORMS = '';</script>
+<script>window.LABBZ_FORMS = 'https://script.google.com/macros/s/AKfycbzJLDwIr_MQPIySaECi0-gs6u4GJNA_M8qNZ22HhloDoMVOdSCzgWfMRBSZS6tsLqQ_/exec';</script>
 </head><body>
 <title>Labbz · One engine. Many ventures.</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -2642,7 +2642,7 @@ html[dir="rtl"] .pass-stub { border-radius: var(--r-xl) 0 0 var(--r-xl);
     ${spawnSection()}
 
     <div class="story" id="story">
-    <nav class="snav" aria-label="${T('Story chapters', 'فصول القصة')}"><div class="wrap"><a class="snav-logo lg" href="#home" data-go="home" aria-label="Labbz home"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect width="200" height="200" rx="28" fill="#0A0A01"/><text x="100" y="134" text-anchor="middle" font-family="\'Exo 2\', \'Segoe UI\', sans-serif" font-weight="600" font-size="96" letter-spacing="1" fill="#0A0A02">Lbz</text></svg></a><ol id="snavList">${CHAPTERS().map(([id, l], i) => `<li><a href="#ch-${id}" data-scroll="ch-${id}" data-ch="${id}"${i === 0 ? ' aria-current="step"' : ''}><span class="num">0${i + 1}</span>${l}</a></li>`).join('')}</ol></div><span class="snav-bar" aria-hidden="true"><i id="snavFill"></i></span></nav>
+    <nav class="snav" aria-label="${T('Story chapters', 'فصول القصة')}"><div class="wrap"><a class="snav-logo lg" href="#home" data-go="home" aria-label="Labbz home"><svg viewBox="0 0 200 200" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"><rect width="200" height="200" rx="28" fill="#0A0A01"/><path fill="#0A0A02" d="M39.12 28.76V69.04Q39.12 71.24 40.3 72.35Q41.48 73.45 43.68 73.45H62.23L62.68 80.67Q57.52 81.12 51.93 81.24Q46.34 81.35 40.87 81.35Q35.1 81.35 32.4 78.39Q29.7 75.42 29.7 70.86V28.76ZM90.13 42.97Q97.28 42.97 100.55 47.46Q103.81 51.94 103.81 62.35Q103.81 66.84 103.02 70.48Q102.22 74.13 100.28 76.75Q98.34 79.38 94.92 80.74Q91.5 82.11 86.18 82.11Q84.28 82.11 81.85 81.96Q79.42 81.81 76.91 81.43Q74.4 81.05 72.08 80.55Q69.77 80.06 67.94 79.3V28H77.14L77.21 40.92Q77.21 43.35 77.06 45.56Q76.83 47.53 76.38 49.43Q78.05 47.76 79.95 46.39Q82.23 44.72 84.85 43.85Q87.47 42.97 90.13 42.97ZM77.14 74.21Q77.97 74.36 78.89 74.51Q80.71 74.89 82.57 75.01Q84.43 75.12 86.03 75.12Q89.07 75.04 90.86 73.9Q92.64 72.76 93.48 69.99Q94.31 67.22 94.31 62.35Q94.31 57.79 93.67 55.17Q93.02 52.55 91.35 51.48Q89.68 50.42 86.56 50.42Q83.83 50.42 81.55 51.71Q79.57 52.78 77.14 54.52ZM141.91 74.51V81.2H109V74.51L131.04 50.65H109.31V43.88H141.61V50.65L119.57 74.51Z"/></svg></a><ol id="snavList">${CHAPTERS().map(([id, l], i) => `<li><a href="#ch-${id}" data-scroll="ch-${id}" data-ch="${id}"${i === 0 ? ' aria-current="step"' : ''}><span class="num">0${i + 1}</span>${l}</a></li>`).join('')}</ol></div><span class="snav-bar" aria-hidden="true"><i id="snavFill"></i></span></nav>
 
     <section class="band ch cw-tap" id="ch-origin" data-ch="origin"><div class="wrap split ch-split">
       <div class="stack" style="gap:22px">${chk(1, T('How it started', 'كيف بدأت'))}
