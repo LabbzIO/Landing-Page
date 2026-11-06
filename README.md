@@ -12,14 +12,24 @@ The Labbz website: one self-contained page (`index.html`), bilingual (English an
 | `og.png` | The preview image shown when the link is shared. |
 | `.nojekyll` | Serves the files as they are. |
 
-## Forms
+## Form submissions
 
-On labbz.io the forms have no database behind them:
+Every Invest, Contact and Request a call submission is saved as a row in a Google Sheet owned by the Labbz Google account, and an email goes to that account for each one. The page posts to a Google Apps Script web app (`forms/labbz-forms.gs`); its URL is set in `index.html` as `window.LABBZ_FORMS`.
 
-- **Contact and Request a call:** opens the visitor's email app with the message pre-filled, to info@labbz.io (or invest@labbz.io for investing).
-- **Invest:** the teaser downloads straight away, then the visitor sends their details to invest@labbz.io by email.
+If the URL is empty or the post fails, the forms fall back to opening the visitor's email app with the message pre-filled (to info@labbz.io, or invest@labbz.io for investing).
 
-A form backend hosted in Saudi Arabia can replace the email step later.
+### Setting it up (once, about 5 minutes)
+
+1. Create a new Google Sheet, for example "labbz.io form submissions".
+2. In the sheet: **Extensions → Apps Script**. Delete what's there, paste the whole of `forms/labbz-forms.gs`, and save.
+3. Optional: put more addresses to notify in `ALSO_NOTIFY`, for example `'info@labbz.io'`.
+4. Choose **testSetup** in the function menu and press **Run**. Approve the permissions (Google warns the app is unverified because it's your own script: **Advanced → Go to … (unsafe)**). A test row appears in a new "Enquiries" tab and a test email arrives.
+5. **Deploy → New deployment → Select type: Web app.** Execute as: **Me**. Who has access: **Anyone**. Deploy and copy the **Web app URL** (it ends in `/exec`).
+6. Send that URL to Claude, or paste it into `index.html` as `window.LABBZ_FORMS = '<url>';` and push.
+
+If you edit the script later: **Deploy → Manage deployments → Edit → Version: New version**, so the same URL keeps working.
+
+Tabs: **Investors** (name, email, mobile, cheque size) and **Enquiries** (topic, name, email, mobile, organisation, product, message). Google's free limits (about 100 notification emails a day) are far above what the site needs.
 
 ## Turning on GitHub Pages (once)
 
